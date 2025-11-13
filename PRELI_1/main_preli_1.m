@@ -122,7 +122,11 @@ K = 100;
 % Platitude via périodogramme de Welch
 [moy_SF_welch, ecart_type_welch] = platitude_spectrale(N, sigma, K, 'welch', window_1, recouvrement_1, Nfft, fs);
 
+% Platitude via DSP
+[moy_SF_DSP, ecart_type_DSP] = platitude_spectrale(N, sigma, K, 'DSP', window_1, recouvrement_1, Nfft, fs);
+
 fprintf('\nPlatitude spectrale\n');
 fprintf('Autocorr -> FFT : moyenne = %f | écart-type = %f\n', moy_SF_auto, ecart_type_auto);
 fprintf('Welch           : moyenne = %f | écart-type = %f\n', moy_SF_welch, ecart_type_welch);
+fprintf('DSP           : moyenne = %f | écart-type = %f\n', moy_SF_DSP, ecart_type_DSP);
 

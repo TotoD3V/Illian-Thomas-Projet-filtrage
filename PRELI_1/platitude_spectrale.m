@@ -17,6 +17,9 @@ function [moy_SF, ecarttype_SF] = platitude_spectrale(N, sigma, K, methode, wind
             case 'welch'
                 P = pwelch(x, window_1, recouvrement_1, Nfft, fs);
 
+            case 'DSP'
+                P = sigma^2 * ones(size(2 * N));
+
             otherwise
                 error('Méthode inconnue : utilisez ''autocorr'' ou ''welch''');
         end
